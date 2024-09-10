@@ -8,7 +8,7 @@ function VesselTable() {
   useEffect(() => {
     const fetchVessels = async () => {
       try {
-        const response = await axios.get('http://192.168.1.8:5000/api/get-tracked-vessels');
+        const response = await axios.get('http://0.0.0.0:5000/api/get-tracked-vessels');
         console.log('API Responseeeee:', response.data);
         setVessels(response.data);
       } catch (error) {
