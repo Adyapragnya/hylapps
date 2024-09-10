@@ -40,7 +40,7 @@ function DashCard({ onRefresh, onHighlight }) {
 
   const fetchVesselData = async (imoNumber) => {
     try {
-      const response = await axios.get("http://192.168.1.8:5000/api/ais-data", {
+      const response = await axios.get("http://0.0.0.0:5000/api/ais-data", {
         params: { imo: imoNumber }
       });
       setSelectedVesselData(response.data);
@@ -53,7 +53,7 @@ function DashCard({ onRefresh, onHighlight }) {
   useEffect(() => {
     const fetchVessels = async () => {
       try {
-        const response = await axios.get("http://192.168.1.8:5000/api/get-vessels", {
+        const response = await axios.get("http://0.0.0.0:5000/api/get-vessels", {
           params: { search: searchInput, page, limit: 20 }
         });
 
@@ -112,7 +112,7 @@ function DashCard({ onRefresh, onHighlight }) {
 
       if (result.isConfirmed) {
         const imoNumber = selectedVesselData.imoNumber;
-        const aisResponse = await axios.get("http://192.168.1.8:5000/api/ais-data", {
+        const aisResponse = await axios.get("http://0.0.0.0:5000/api/ais-data", {
           params: { imo: imoNumber }
         });
 
@@ -124,7 +124,7 @@ function DashCard({ onRefresh, onHighlight }) {
           deadWeight: selectedVesselData.deadWeight,
         };
 
-        await axios.post('http://192.168.1.8:5000/api/add-combined-data', requestBody);
+        await axios.post('http://0.0.0.0:5000/api/add-combined-data', requestBody);
         console.log('Combined data added successfully');
 
         // Notify parent to refresh table and highlight row
