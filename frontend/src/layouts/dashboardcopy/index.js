@@ -55,7 +55,7 @@ function Dashboardcopy() {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.8:5000/api/get-tracked-vessels")
+      .get("http://0.0.0.0:5000/api/get-tracked-vessels")
       .then((response) => {
         const formattedData = response.data.map((vessel) => ({
           name: vessel.AIS.NAME || "",
