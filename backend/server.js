@@ -264,6 +264,6 @@ app.get('/api/ais-data', async (req, res) => {
 });
 
 
-app.listen(port, '0.0.0.0', () => console.log(`Server running on http://0.0.0.0:${port}`));
+app.listen(port, '104.225.218.43', () => console.log(`Server running on http://104.225.218.43:${port}`));
 
 
